@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <!-- Load the latest version of TensorFlow.js -->
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <!-- Using v2.0.2 since v2.0.3 is currently generating wrong predictions -->
+    <script src="https://unpkg.com/@tensorflow-models/mobilenet@2.0.2"></script>
+    <!-- Add kNN classifier to decide which object an image from the webcam -->
+    <!-- stream -->
+    <script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
+  </head>
+  <body>
+    <h2>Tensorflow.js Classification Demo</h2>
+    <div id="help"></div>
+    <div id="console"></div>
+    <!-- Enable a video stream from the webcam that we can use for classification -->
+    <div>
+      <video autoplay playsinline muted id="webcam" width="224" height="224"></video>
+    <!-- Buttons to lock what image goes to which class so we can capture their -->
+    <!-- activations -->
+    <br>
+    <button id="class-a">Add A</button>
+    <button id="class-b">Add B</button>
+    <button id="class-c">Add C</button>
+    </div>
+    <!-- Load index.js after the content of the page -->
+    <script src="index.js"></script>
+  </body>
+</html>
